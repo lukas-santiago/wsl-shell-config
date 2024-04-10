@@ -45,13 +45,13 @@ bindkey '^H' backward-kill-word
 
 # ZSH Package Manager - Antidote
 git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote | zsh -s
-echo $'\n\n# source antidote (brew version)\n
+echo $'\n\n# source antidote\n
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load\n' >>~/.zshrc
 
 # ASDF
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
-echo '. /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh' >>~/.zprofile
+echo '. ~/.asdf/asdf.sh' >>~/.zprofile
 # omz reload
 
 # Nodejs
