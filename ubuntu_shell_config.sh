@@ -32,6 +32,7 @@ chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Oh My Posh
+export RUNZSH='no'
 curl -s https://ohmyposh.dev/install.sh | sudo bash -s
 
 # Registro de Atalhos
