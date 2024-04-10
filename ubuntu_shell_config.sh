@@ -59,7 +59,7 @@ echo '. /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh' >>~/.zprofile
 # asdf global nodejs latest
 
 # Adicionar plugins
-echo 'ohmyzsh/ohmyzsh path:plugins/asdf\n' >>~/.zsh_plugins.txt
+echo $'ohmyzsh/ohmyzsh path:plugins/asdf\n' >>~/.zsh_plugins.txt
 
 zsh -c $'source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load
