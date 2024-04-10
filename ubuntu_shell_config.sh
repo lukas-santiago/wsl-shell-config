@@ -1,4 +1,5 @@
 #!/bin/bash
+# **** Run in new terminal: curl -L https://github.com/lukas-santiago/wsl-shell-config/raw/main/ubuntu_shell_config.sh | bash -s
 
 # Atualização do Sistema
 sudo apt-get update
@@ -76,3 +77,5 @@ oh-my-posh font install # FiraCode
 echo 'eval "$(oh-my-posh init zsh --config ~/theme.oh-my-posh.yaml)"' >>~/.zshrc
 
 exec zsh
+
+# **** Run in new terminal: curl -L https://github.com/lukas-santiago/wsl-shell-config/raw/main/ubuntu_shell_config.sh | bash -s
