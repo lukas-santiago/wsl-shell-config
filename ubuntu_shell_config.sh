@@ -72,6 +72,6 @@ echo 'eval "$(mcfly init zsh)"' >>~/.zshrc
 
 curl -o ~/theme.oh-my-posh.yaml https://github.com/lukas-santiago/wsl-shell-config/raw/main/theme.oh-my-posh.yaml
 oh-my-posh font install # FiraCode
-echo 'eval "$(oh-my-posh init zsh --config ~/.theme.oh-my-posh.yaml)"' >>~/.zshrc
+echo 'eval "$(oh-my-posh init zsh --config ~/theme.oh-my-posh.yaml)"' >>~/.zshrc
 
 exec zsh
