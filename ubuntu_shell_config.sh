@@ -23,7 +23,7 @@ if [ $(dpkg-query -W -f='${Status}' curl 2>/dev/null | grep -c "ok installed") -
 fi
 
 if [ $(dpkg-query -W -f='${Status}' git 2>/dev/null | grep -c "ok installed") -eq 0 ]; then
-  sudo apt-get install curl -y
+  sudo apt-get install git -y
 fi
 
 # Alterar shell para zsh
@@ -46,6 +46,7 @@ bindkey '^H' backward-kill-word
 
 # ZSH Package Manager - Antidote
 git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote | zsh -s
+
 echo $'\n\n# source antidote\n
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load\n' >>~/.zshrc
@@ -53,7 +54,6 @@ antidote load\n' >>~/.zshrc
 # ASDF
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
 echo '. ~/.asdf/asdf.sh' >>~/.zprofile
-# omz reload
 
 # Nodejs
 # asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
@@ -69,11 +69,14 @@ antidote install zsh-users/zsh-completions
 antidote install zsh-users/zsh-autosuggestions
 antidote install zsh-users/zsh-syntax-highlighting'
 
+# Mcfly
+# Caso não funcione, adicionar "--tag <versão-do-mcfly>". Ex: --tag v0.8.4
 curl -LSfs https://raw.githubusercontent.com/cantino/mcfly/master/ci/install.sh | sudo sh -s -- --git cantino/mcfly
 echo 'eval "$(mcfly init zsh)"' >>~/.zshrc
 
+# Oh My Posh Configuration
 curl -L -o ~/theme.oh-my-posh.yaml https://github.com/lukas-santiago/wsl-shell-config/raw/main/theme.oh-my-posh.yaml
-oh-my-posh font install # FiraCode
+oh-my-posh font install # --> FiraCode
 echo 'eval "$(oh-my-posh init zsh --config ~/theme.oh-my-posh.yaml)"' >>~/.zshrc
 
 exec zsh
