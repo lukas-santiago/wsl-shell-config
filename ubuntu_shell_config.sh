@@ -28,41 +28,30 @@ chsh -s $(which zsh)
 echo "Instalando o Oh My Zsh..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# Oh My Posh
-echo "Instalando o Oh My Posh..."
-export RUNZSH='no'
-curl -s https://ohmyposh.dev/install.sh | sudo bash -s
-
 # Registro de Atalhos
 echo "Registrando atalhos..."
-echo "
-#### Registro de Atalhos
+echo "#### Registro de Atalhos
 bindkey '^[[1;5C' emacs-forward-word
 bindkey '^[[1;5D' emacs-backward-word
 bindkey '^H' backward-kill-word
 bindkey '^X^X' edit-command-line
-
 " >>~/.zshrc
 
 # ZSH Package Manager - Antidote
 echo "Instalando o Antidote..."
 git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote | zsh -s
 
-echo $"
-#### ZSH Package Manager - Antidote
+echo $"#### ZSH Package Manager - Antidote
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load
-
 " >>~/.zshrc
 
 # ASDF
 echo "Instalando o ASDF..."
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
 
-echo "
-#### ASDF
+echo "#### ASDF
 . ~/.asdf/asdf.sh
-
 " >>~/.zprofile
 
 # Adicionar plugins
@@ -80,21 +69,24 @@ antidote install zsh-users/zsh-syntax-highlighting'
 echo "Instalando o Mcfly..."
 # Caso não funcione, adicionar "--tag <versão-do-mcfly>". Ex: --tag v0.8.4
 curl -LSfs https://raw.githubusercontent.com/cantino/mcfly/master/ci/install.sh | sudo sh -s -- --git cantino/mcfly
-echo "
-#### Mcfly
-eval \"$(mcfly init zsh)\"
+echo $'#### Mcfly
+eval "$(mcfly init zsh)"
+' >>~/.zshrc
 
-" >>~/.zshrc
+# Oh My Posh
+echo "Instalando o Oh My Posh..."
+export RUNZSH='no'
+curl -s https://ohmyposh.dev/install.sh | sudo bash -s -- -d /usr/local/bin
 
 # Oh My Posh Configuration
 echo "Configurando o Oh My Posh..."
 curl -L -o ~/theme.oh-my-posh.yaml https://github.com/lukas-santiago/wsl-shell-config/raw/wsl-00/theme.oh-my-posh.yaml
 oh-my-posh font install # --> FiraCode
-echo "
+echo $'
 #### Oh My Posh
 eval \"$(oh-my-posh init zsh --config ~/theme.oh-my-posh.yaml)\"
 
-" >>~/.zshrc
+' >>~/.zshrc
 
 exec zsh
 
