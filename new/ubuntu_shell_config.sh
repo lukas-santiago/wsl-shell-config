@@ -27,7 +27,7 @@ if [ $(dpkg-query -W -f='${Status}' git 2>/dev/null | grep -c "ok installed") -e
 fi
 
 # Alterar shell para zsh
-chsh -s $(which zsh)
+sudo chsh -s $(which zsh)
 
 # Instalação do OMZ (Oh My Zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
