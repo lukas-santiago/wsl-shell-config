@@ -1,0 +1,11 @@
+# oh my zsh
+getantidote/use-omz
+ohmyzsh/ohmyzsh path:lib
+ohmyzsh/ohmyzsh path:plugins/git
+
+/home/$USER/.asdf kind:zsh
+/home/$USER/.asdf kind:fpath path:completions 
+
+zsh-users/zsh-completions kind:fpath path:src 
+zsh-users/zsh-autosuggestions
+zdharma-continuum/fast-syntax-highlighting
