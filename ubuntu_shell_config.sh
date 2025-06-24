@@ -75,6 +75,7 @@ curl -LSfs https://raw.githubusercontent.com/cantino/mcfly/master/ci/install.sh 
 echo 'eval "$(mcfly init zsh)"' >>~/.zshrc
 
 # Oh My Posh Configuration
+curl -s https://ohmyposh.dev/install.sh | bash -s
 curl -L -o ~/theme.oh-my-posh.yaml https://github.com/lukas-santiago/wsl-shell-config/raw/main/theme.oh-my-posh.yaml
 oh-my-posh font install # --> FiraCode
 echo 'eval "$(oh-my-posh init zsh --config ~/theme.oh-my-posh.yaml)"' >>~/.zshrc
