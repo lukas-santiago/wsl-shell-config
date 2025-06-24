@@ -34,6 +34,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 # Novo ~/.zshrc limpo
 curl -L https://github.com/lukas-santiago/wsl-shell-config/raw/main/new/.zshrc > ~/.zshrc
+curl -L https://github.com/lukas-santiago/wsl-shell-config/raw/main/new/.zprofile > ~/.zprofile
 
 # Oh My Posh
 export RUNZSH='no'
@@ -44,7 +45,6 @@ git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antid
 
 # ASDF
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
-echo '. ~/.asdf/asdf.sh' >>~/.zprofile
 
 # Nodejs
 # asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
