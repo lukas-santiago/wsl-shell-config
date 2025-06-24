@@ -63,7 +63,7 @@ curl -LSfs https://raw.githubusercontent.com/cantino/mcfly/master/ci/install.sh 
 # Oh My Posh Configuration
 curl -s https://ohmyposh.dev/install.sh | bash -s
 curl -L -o ~/theme.oh-my-posh.yaml https://github.com/lukas-santiago/wsl-shell-config/raw/main/theme.oh-my-posh.yaml
-oh-my-posh font install # --> FiraCode
+/home/lk/.local/bin/oh-my-posh font install FiraCode # --> FiraCode
 
 exec zsh
 
