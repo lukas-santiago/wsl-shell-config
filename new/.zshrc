@@ -1,3 +1,5 @@
+export PATH="$HOME/.local/bin:$PATH"
+
 # Binds for life saving
 bindkey '^[[1;5C' emacs-forward-word
 bindkey '^[[1;5D' emacs-backward-word
